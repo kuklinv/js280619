@@ -1,6 +1,6 @@
 // let b = 3;
 // let a;
-// if (true) {
+// if (true) {                     /// обязательно евхождение в иф
 //     a = b + 3;
 // }
 // console.log(a)
