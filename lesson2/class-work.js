@@ -66,6 +66,10 @@
 //         age: 15
 //     }
 // ];
+
+// for (const currentKey in users) {
+//     console.log(users[currentKey]);
+// }
 //
 // const userHashMap = users.reduce((obj, user) => {
 //     obj[user._id] = user;                          // вот оно
@@ -76,9 +80,16 @@
 
 // 'interator112233': (){}
 
+
+// дальше вспоминаем про символы и "хорошо известные символы"
+// хороши тем что можно задавать уникальные значения потому что символы не равны
+
+
+
+
 // const admin = {
 //     fullName: 'Nepipenko Igor Pavlovich',
-//     [Symbol.iterator]: function () {
+//     [Symbol.iterator]: function () {                 // вот использоывание !!!!
 //         const nameArr = this.fullName.split(' ');
 //         let index = 0;
 //         return {
