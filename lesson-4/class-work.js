@@ -16,32 +16,56 @@
 //     let parentUl = el.closest('li');
 //     console.log(parentUl);
 // }
-//let topics = ["flutter", "ReacNativ", "Vue"];
 
+///////////////////// прикольный метод создания списка через reduce из массива строк
+let topics = ["flutter", "ReacNativ", "Vue"];
 
-let ulJS = document.querySelector('#js ul');
+// let divJS = document.querySelector('#js ul');
+// divJS.innerHTML = topics.reduce((htmlTag, topics) => {
+//     htmlTag += `<li>${topics}</li>`;
+//     return htmlTag;
+// }, '');   // - инициализировал с пустой строки // initial element
 
-let fragment = document.createDocumentFragment();
+////////////////////////// если не перерисовывать а дополнять список то так:
 
-let li1 = document.createElement('li');
-li1.innerHTML = '<span>NodeJS</span>';
-
-let li2 = document.createElement('li');
-li2.innerHTML = '<span>Express</span>';
-
-let li3 = document.createElement('li');
-li3.classList.add('green')
-li3.innerHTML = '<span>Koa</span>';
-
-
+let divJS = document.querySelector('#js ul');
+let StrHtmltoInsert = topics.reduce((htmlTag, topics) => {
+    htmlTag += `<li>${topics}</li>`;
+    return htmlTag;
+}, '');  
+// divJS.insertAdjacentHTML ('beforeend', StrHtmltoInsert);
+//////////////////////////// можно все это добавть в setTimeOut
 setTimeout(() => {
-    fragment.append(li1, li2, li3);
-    ulJS.appendChild(fragment);
-}, 5000)
+    divJS.insertAdjacentHTML ('beforeend', StrHtmltoInsert);
+}, 1000);   /// через 5 сек/
 
-setTimeout(() => {
-    ulJS.querySelector('.green').innerHTML = 'Dart';
-}, 10000)
+let liNext = document.createElement('li');
+liNext.innerHTML = `<span>Node JS</span>`;
+divJS.appendChild(liNext);
+
+// let ulJS = document.querySelector('#js ul');
+
+// let fragment = document.createDocumentFragment();
+
+// let li1 = document.createElement('li');
+// li1.innerHTML = '<span>NodeJS</span>';
+
+// let li2 = document.createElement('li');
+// li2.innerHTML = '<span>Express</span>';
+
+// let li3 = document.createElement('li');
+// li3.classList.add('green')
+// li3.innerHTML = '<span>Koa</span>';
+
+
+// setTimeout(() => {
+//     fragment.append(li1, li2, li3);
+//     ulJS.appendChild(fragment);
+// }, 5000)
+
+// setTimeout(() => {
+//     ulJS.querySelector('.green').innerHTML = 'Dart';
+// }, 10000)
 
 // const strForParsing = ulJS.dataset.additionList.replace(/'/g,'"');
 // console.log(ulJS.dataset)

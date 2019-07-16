@@ -59,3 +59,13 @@
 // };
 // console.log(a1.toString());
 // 'str'.charAt(0);
+
+
+// for example
+
+const pow = (num, n) => {
+    debugger;
+    return n !== 1 ? num * pow (num, n - 1) : num;
+}
+
+console.log(pow(2, 2));
