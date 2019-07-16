@@ -1,0 +1,14 @@
+h1 {
+	margin: auto;
+	padding: auto;
+	display: flex;
+	align-content: center;
+	color: red;
+}
+
+/*это класс для первой задачи*/
+
+  .external {
+    background-color: yellow
+  }
+
