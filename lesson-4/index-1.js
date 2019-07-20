@@ -88,6 +88,6 @@ function createBody(users) {
             tr.appendChild(td)
         });
         tbody.appendChild(tr);
-    })
+    });
     return tbody;
 }
