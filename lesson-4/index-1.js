@@ -33,7 +33,6 @@ table.append(thead, tbody);
 document.body.appendChild(table);
 table.addEventListener('click', sortColumns);
 
-
 function sortColumns(event) {
     const el = event.target;
     const type = el.dataset.type;
