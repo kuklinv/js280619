@@ -23,5 +23,11 @@ let style = `
 `;
 
 function styleToObject(str) {
-    return {};
+    let  arrFromStr = str.split(' ').filter(function (item) {
+        return (item !== '\n' && item !== '');
+    });
+    console.log(arrFromStr);
+    // return {};
 }
+
+styleToObject(style);

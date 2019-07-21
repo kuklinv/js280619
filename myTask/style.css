@@ -1,0 +1,20 @@
+h1, h4 {
+    display: flex;
+    justify-content: center;
+}
+
+.itsNoTask {
+    color: blue;
+}
+
+.external {
+    background-color: yellow
+}
+
+#taskContainer {
+    display: block;
+}
+
+footer {
+    justify-content: center;
+}
