@@ -16,32 +16,32 @@ let data = {
     }
 };
 
-const createTree = (targetHTML, data) => {
-  targetHTML.appendChild(createTreeDom(data));
+const createTree = (targetDiv, data) => {
+  targetDiv.appendChild(createTreeDom(data));
 };
 
 const createTreeDom = (data) => {
   if (isEmpty(data)) return;
   let  ul = document.createElement('ul');
   for (let key in data) {
-      li = document.createElement('li');
+      let  li = document.createElement('li');
       li.innerHTML = key;
 
-      let ulChildren = createTreeDom(data[key]);
-      if (ulChildren) {
-          ulChildren.appendChild(li);
+      let  childrenUl = createTreeDom(data[key]);
+      if (childrenUl) {
+          li.appendChild(childrenUl);
       }
-      ul.append(li);
+      ul.appendChild(li);
   }
   return ul;
 };
 
-let  targetHTML = document.querySelector('#tree');
-createTree(targetHTML, data);
-
 function isEmpty(obj) {
     for (let key in obj) {
-        console.log(false);
+        return false;
     }
-    return console.log(true);
-}
+    return true;
+};
+
+let targetDiv = document.querySelector('#tree');
+createTree(targetDiv, data);
