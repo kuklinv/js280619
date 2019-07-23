@@ -1,3 +1,8 @@
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
 h4, footer > h6 {
     display: flex;
     justify-content: center;

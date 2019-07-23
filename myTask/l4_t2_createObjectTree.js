@@ -1,42 +1,43 @@
 let data = {
-    "Рыбы": {
-        "Форель": {},
-        "Щука": {}
+    "Fish": {
+        "Trout": {},
+        "Pike": {}
     },
 
-    "Деревья": {
-        "Хвойные": {
-            "Лиственница": {},
-            "Ель": {}
+    "Trees": {
+        "Coniferous": {
+            "Larch": {},
+            "Spruce": {}
         },
-        "Цветковые": {
-            "Берёза": {},
-            "Тополь": {}
+        "Flowers": {
+            "Birch tree": {},
+            "Topol": {}
         }
     }
-};
-
-const createTree = (targetHTML, data) => {
-  targetHTML.appendChild(createTreeDom(data));
 };
 
 const createTreeDom = (data) => {
   if (isEmpty(data)) return;
   let  ul = document.createElement('ul');
   for (let key in data) {
-      li = document.createElement('li');
+      let li = document.createElement('li');
       li.innerHTML = key;
 
       let ulChildren = createTreeDom(data[key]);
       if (ulChildren) {
-          ulChildren.appendChild(li);
+          li.appendChild(ulChildren);
       }
-      ul.append(li);
+      ul.appendChild(li);
   }
   return ul;
 };
 
-let  targetHTML = document.querySelector('#tree');
+let  targetHTML = document.querySelector('div[class="task2"]');
+
+const createTree = (targetHTML, data) => {
+    targetHTML.appendChild(createTreeDom(data));
+};
+
 createTree(targetHTML, data);
 
 function isEmpty(obj) {
