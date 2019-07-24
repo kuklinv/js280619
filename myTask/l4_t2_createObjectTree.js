@@ -42,7 +42,7 @@ createTree(targetHTML, data);
 
 function isEmpty(obj) {
     for (let key in obj) {
-        console.log(false);
+        return false;
     }
-    return console.log(true);
+    return true;
 }

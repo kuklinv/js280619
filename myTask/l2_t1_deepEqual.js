@@ -30,4 +30,4 @@ function deepEqual(a, b) {
     };
     return false;
 }
-deepEqual(a, b);
+deepEqual(a, b,);

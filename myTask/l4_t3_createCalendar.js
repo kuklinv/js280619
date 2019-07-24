@@ -4,14 +4,14 @@ const createCalendar = (id, year, month) => {
     let dataObj = {};
     dataObj.year = data.getFullYear();
     dataObj.month = data.getMonth();
-    dataObj.day = data.getDay();
-    console.log(dataObj);
+    dataObj.day = data.getDay();\
     // const table = document.createElement('table');
     // let caption = document.createElement("caption");
     const thead = createHeader(dataNameArr);
     // const tbody = createBody(users);
     // table.append(thead, tbody);
-    // const targetHTMLelement = document.querySelector('id');
+    let idSelector = `#{id}`;
+    const targetHTMLelement = document.querySelector('idSelector');
     // targetHTMLelement.appendChild(table);
 };
 
@@ -28,7 +28,7 @@ const createHeader = (dataNameArr) => {
 };
 
 const createBody = () => {
-    // const tbody = document.createElement('tbody');
+    const tbody = document.createElement('tbody');
     // users.forEach((user) => {
     //     const tr = document.createElement('tr');
     //     const rowKeysArr = Object.keys(user);

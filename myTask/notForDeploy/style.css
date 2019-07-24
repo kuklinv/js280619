@@ -1,0 +1,17 @@
+
+table{
+    margin: auto;
+    margin-top: 60px;
+}
+caption {
+    font-size: small;
+}
+td, th{
+    border: 1px solid black;
+}
+th {
+    cursor: pointer;
+}
+th:hover {
+    background: limegreen;
+}

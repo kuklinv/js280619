@@ -33,4 +33,4 @@ function generateTodo(element) {
                 <input type="text" class="edit"></li>`);
         target.value = '';
     });
-}
+};
