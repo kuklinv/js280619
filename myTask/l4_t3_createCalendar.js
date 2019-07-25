@@ -1,21 +1,21 @@
-
 const createCalendar = (id, year, month) => {
     let data = new Date(year, month - 1);
-    let dataObj = {};
-    dataObj.year = data.getFullYear();
-    dataObj.month = data.getMonth();
-    dataObj.day = data.getDay();\
-    // const table = document.createElement('table');
-    // let caption = document.createElement("caption");
+    let formatedDate = data.toLocaleString("en-US", {year: 'numeric', month: 'long'});
+    const table = document.createElement('table');
+    let caption = createCaption(formatedDate);
     const thead = createHeader(dataNameArr);
-    // const tbody = createBody(users);
-    // table.append(thead, tbody);
-    let idSelector = `#{id}`;
-    const targetHTMLelement = document.querySelector('idSelector');
-    // targetHTMLelement.appendChild(table);
+    const tbody = createBody(data);
+    table.append(caption, thead, tbody);
+    const targetHTMLelement = document.getElementById('calendar');
+    targetHTMLelement.appendChild(table);
+};
+const createCaption = (data) => {
+    let caption = document.createElement("caption");
+    caption.innerHTML = data;
+    return caption;
 };
 
-let  dataNameArr = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+let dataNameArr = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
 const createHeader = (dataNameArr) => {
     const thead = document.createElement('thead');
@@ -27,19 +27,31 @@ const createHeader = (dataNameArr) => {
     return thead;
 };
 
-const createBody = () => {
+const createBody = (data) => {
     const tbody = document.createElement('tbody');
-    // users.forEach((user) => {
-    //     const tr = document.createElement('tr');
-    //     const rowKeysArr = Object.keys(user);
-    //     rowKeysArr.forEach((key) => {
-    //         const td = document.createElement('td');
-    //         td.innerHTML = user[key];
-    //         tr.appendChild(td)
-    //     });
-    //     tbody.appendChild(tr);
-    // });
-    // return tbody;
+    let today = function getDay(date) {
+        var day = date.getDay();
+        if (day == 0) day = 7;
+        return day - 1;
+    };
+    let month = data.getMonth();
+    for (let i = 0; i < 5; i += 1) {
+        let tr = document.createElement('tr');
+        let j = 0;
+        while (j < 7) {
+            let td = document.createElement('td');
+            if (data.getMonth() !== month) {
+                td.innerHTML = null;
+                td.classList.add('empty');
+            } else {
+                td.innerHTML = data.getDate();
+            }
+            tr.appendChild(td);
+            j += 1;
+            data.setDate(data.getDate() + 1);
+        }
+        tbody.appendChild(tr);
+    }
+    return tbody;
 };
-
-createCalendar("cal", 2012, 9); //<div id=„cal“></div>
+createCalendar("cal", 2012, 9);

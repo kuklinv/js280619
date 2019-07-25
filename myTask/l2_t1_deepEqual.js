@@ -14,8 +14,6 @@ let b = {
     }
 };
 
-console.log(a === b);
-
 function deepEqual(a, b) {
     if ((typeof a == "object" && Object.keys(a).length !== null) && (typeof b == "object" && Object.keys(b).length !== null)) {
         for (let key in a) {
@@ -30,4 +28,6 @@ function deepEqual(a, b) {
     };
     return false;
 }
-deepEqual(a, b,);
+console.log(a === b);
+let  result = deepEqual(a, b,);
+console.log(`no work: ${result}`);

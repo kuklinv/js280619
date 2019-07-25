@@ -17,3 +17,12 @@ th {
 th:hover {
     background: limegreen;
 }
+
+.empty {
+    background-color: #787e7e;
+}
+
+td:hover {
+    background-color: red;
+    color: lime;
+}

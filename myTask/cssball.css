@@ -1,0 +1,9 @@
+#field {
+    display: block;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(0,255,0);
+    border: 10px solid black;
+    border-style: groove;
+}
