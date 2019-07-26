@@ -1,5 +1,6 @@
+
 h1 {
-    display: flex;
+ display: flex;
     justify-content: center;
 }
 
@@ -42,3 +43,18 @@ td:hover {
     background-color: red;
     color: lime;
 }
+/*#headerMain {*/
+/*    width:920px;*/
+/*    height: 195px;*/
+/*    margin-top: 0px;*/
+/*    position: absolute;*/
+/*}*/
+
+/*#header {*/
+/*    width:920px;*/
+/*    height: 195px;*/
+/*    !*background: url(../img/bg-header.jpg) no-repeat;*!*/
+/*    position: fixed;*/
+/*    !*display: flex;*!*/
+/*    !*justify-content: center;*!*/
+/*}*/
