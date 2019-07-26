@@ -23,11 +23,9 @@ function deepEqual(a, b) {
                 }
             } else  return  false;
         }
-    } else  if (a === b) {
-        return true;
-    };
+    } return true;
     return false;
 }
 console.log(a === b);
 let  result = deepEqual(a, b,);
-console.log(`no work: ${result}`);
+console.log(result); 
