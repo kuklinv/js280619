@@ -1,39 +1,31 @@
-
-let  table = document.querySelector('table[class="js-teachers"]');
-let tbody = table.querySelector('tbody');
-let trArr = tbody.querySelectorAll('tr');
+let trArr = document.body.querySelectorAll('table[class="js-teachers"] > tbody > tr');
 
 const highlight = (trArr) => {
+    trArr.forEach(function (item) {
+        if (item["children"][2]["textContent"] == 'm') {
+            item.classList.add('male');
+        } else {
+            item.classList.add('female');
+        }
+        if (item["children"][3].dataset.available === 'true') {
+            item.classList.add('available');
+        } else if (item["children"][3].dataset.available === 'false') {
+            item.classList.add('unavailable');
+        } else  if (!item["children"][3].hasOwnProperty('dataset')) {
+            item.setAttribute('hidden', 'true');
+        }
+        if (Number(item["children"][1]["textContent"]) < 18) {
+            item.style = 'text-decoration: line-through';
+        }
+    });
 
-    return;
 };
 
+setTimeout(() => {
+    highlight(trArr);
+}, 2000);
 
 
 
-// 'use strict';
-//
-// function highlight(table) {
-//     console.log(table);
-//
-//     let tbody = table.getElementsByTagName('tbody')[0];
-//     let trs = tbody.getElementsByTagName('tr');
-//
-//     let a = 0;
-//     for (let item in trs) {
-//         a++;
-//         console.log(a);
-//         console.log(trs[item].cells[3]);
-//     }
-//     /*for (let i = 0; i < trs.length; i++) {
-//       let statusCell = trs[i].cells[3];
-//       console.log(statusCell);
-//       if (statusCell.dataset.available) {
-//         statusCell.addClass('available');
-//       }
-//     }*/
-//
-//     console.log(trs);
-// }
-//
-// highlight(document.querySelector('.js-teachers'));
+
+
