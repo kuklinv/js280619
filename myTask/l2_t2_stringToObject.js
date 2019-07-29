@@ -39,7 +39,10 @@ function styleToObject(str) {
         myParsingObject.setter(myParsingArr[i][0], myParsingArr[i][1]);
     }
     delete myParsingObject.setter;
-    console.log(myParsingObject);
+    // console.log(myParsingObject);
+    return myParsingObject;
 }
 
 styleToObject(style);
+
+export { style, styleToObject };

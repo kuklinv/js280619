@@ -1,7 +1,7 @@
 let  field = document.querySelector('#field2');
 let ball = document.querySelector('#ball');
-window.innerWidth = field.offsetWidth;
-window.innerHeight = field.offsetHeight;
+// window.innerWidth = field.offsetWidth;
+// window.innerHeight = field.offsetHeight;
 ball.style.width = ball.style.height = "40px";
 
 setTimeout(() => {
