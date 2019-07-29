@@ -1,23 +1,68 @@
 let mainUl = document.querySelector('ul[class="tree"]');
+let selectedLi;
 
+mainUl.addEventListener('mouseover', function (e) {
+    let target = e.target;
+    target.style.fontWeight = 'bold';
+});
 
-// let data = {
-//     "Fish": {
-//         "Trout": {},
-//         "Pike": {}
-//     },
-//
-//     "Trees": {
-//         "Coniferous": {
-//             "Larch": {},
-//             "Spruce": {}
-//         },
-//         "Flowers": {
-//             "Birch tree": {},
-//             "Topol": {}
+mainUl.addEventListener('mouseout', function (e) {
+    let target = e.target;
+    target.style.fontWeight = 'normal';
+});
+
+mainUl.addEventListener('click', function (e) {
+   let target = e.target;
+   while (target != this) {
+       if (target.name == 'li') {
+           target.childNodes.forEach((item) => item.toggle());
+       }
+       target = target.parentNode;
+   }
+});
+
+// mainUl.addEventListener('onclick', function (e) {
+//     let target = e.target;
+//     while (target != mainUl) {
+//         if (target.name == "li") {
+//             // convolution(target);
+//             target.toggle();
+//             return;
 //         }
+//         target= target.parentNode;
 //     }
+// });
+//
+// const convolution = (node) => {
+//   if (!node.hasChildNodes()) {
+//       // node.childNodes.forEach(setAttribute('hidden', 'true'));
+//       node.toggle();
+//   }
+//   convolution(node.firstChild);
+//
 // };
+
+// mainUl.addEventListener('onclick', function (e) {
+//     let target = e.target;
+//     while (target != mainUl) {
+//         if (target.name = 'LI') {
+//             convolution(target);
+//             return;
+//         }
+//         target = target.parentNode;
+//     }
+// });
+
+// const convolution = (node) => {
+//     if (selectedLi) {
+//         selectedLi.setAttribute('hidden', 'false');
+//     }
+//     selectedLi = node.children;
+//     selectedLi.setAttribute('hidden', 'true');
+// };
+
+
+
 //
 // const createTreeDom = (data) => {
 //     if (isEmpty(data)) return;
