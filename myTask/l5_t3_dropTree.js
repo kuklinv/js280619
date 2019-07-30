@@ -13,12 +13,14 @@ mainUl.addEventListener('mouseout', function (e) {
 
 mainUl.addEventListener('click', function (e) {
    let target = e.target;
-   while (target != this) {
-       if (target.name == 'li') {
-           target.childNodes.forEach((item) => item.toggle());
-       }
-       target = target.parentNode;
-   }
+   target.childNodes.toggle();
+   // while (target != this) {
+   //     if (target.name == 'li') {
+   //         target.toggle();
+   //         // target.childNodes.forEach((item) => item.toggle());
+   //     }
+   //     target = target.parentNode;
+   // }
 });
 
 // mainUl.addEventListener('onclick', function (e) {
