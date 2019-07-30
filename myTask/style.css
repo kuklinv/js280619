@@ -43,6 +43,11 @@ td:hover {
     background-color: red;
     color: lime;
 }
+
+iframe {
+    width: 600px;
+    height: 200px;
+}
 /*#headerMain {*/
 /*    width:920px;*/
 /*    height: 195px;*/
