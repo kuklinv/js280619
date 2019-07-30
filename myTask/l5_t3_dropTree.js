@@ -1,5 +1,4 @@
 let mainUl = document.querySelector('ul[class="tree"]');
-let selectedLi;
 
 mainUl.addEventListener('mouseover', function (e) {
     let target = e.target;
@@ -11,86 +10,26 @@ mainUl.addEventListener('mouseout', function (e) {
     target.style.fontWeight = 'normal';
 });
 
-mainUl.addEventListener('click', function (e) {
-   let target = e.target;
-   while (target != this) {
-       if (target.name == 'li') {
-           target.childNodes.forEach((item) => item.toggle());
-       }
-       target = target.parentNode;
-   }
-});
+let treeLis = mainUl.querySelectorAll('li');
 
-// mainUl.addEventListener('onclick', function (e) {
-//     let target = e.target;
-//     while (target != mainUl) {
-//         if (target.name == "li") {
-//             // convolution(target);
-//             target.toggle();
-//             return;
-//         }
-//         target= target.parentNode;
-//     }
-// });
-//
-// const convolution = (node) => {
-//   if (!node.hasChildNodes()) {
-//       // node.childNodes.forEach(setAttribute('hidden', 'true'));
-//       node.toggle();
-//   }
-//   convolution(node.firstChild);
-//
-// };
+for (let i = 0; i < treeLis.length; i++) {
+    let li = treeLis[i];
 
-// mainUl.addEventListener('onclick', function (e) {
-//     let target = e.target;
-//     while (target != mainUl) {
-//         if (target.name = 'LI') {
-//             convolution(target);
-//             return;
-//         }
-//         target = target.parentNode;
-//     }
-// });
+    let span = document.createElement('span');
+    li.insertBefore(span, li.firstChild);
+    span.appendChild(span.nextSibling);
+}
 
-// const convolution = (node) => {
-//     if (selectedLi) {
-//         selectedLi.setAttribute('hidden', 'false');
-//     }
-//     selectedLi = node.children;
-//     selectedLi.setAttribute('hidden', 'true');
-// };
+mainUl.onclick = function(event) {
+    let target = event.target;
 
+    if (target.tagName != 'SPAN') {
+        return;
+    }
 
+    let childrenContainer = target.parentNode.getElementsByTagName('ul')[0];
+    if (!childrenContainer) return; // no children
 
-//
-// const createTreeDom = (data) => {
-//     if (isEmpty(data)) return;
-//     let  ul = document.createElement('ul');
-//     for (let key in data) {
-//         let li = document.createElement('li');
-//         li.innerHTML = key;
-//
-//         let ulChildren = createTreeDom(data[key]);
-//         if (ulChildren) {
-//             li.appendChild(ulChildren);
-//         }
-//         ul.appendChild(li);
-//     }
-//     return ul;
-// };
-//
-// let  targetHTML = document.querySelector('div[class="task2"]');
-//
-// const createTree = (targetHTML, data) => {
-//     targetHTML.appendChild(createTreeDom(data));
-// };
-//
-// createTree(targetHTML, data);
-//
-// function isEmpty(obj) {
-//     for (let key in obj) {
-//         return false;
-//     }
-//     return true;
-// }
+    childrenContainer.hidden = !childrenContainer.hidden;
+};
+
