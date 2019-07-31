@@ -24,11 +24,17 @@ mainUl.addEventListener('click', function (e) {
 
 mainUl.addEventListener('mouseover', function (e) {
    let target = e.target;
+    if (target.tagName != 'SPAN') {
+        return;
+    }
    target.style.fontWeight ='bold';
 });
 
 mainUl.addEventListener('mouseout', function (e) {
    let target = e.target;
+    if (target.tagName != 'SPAN') {
+        return;
+    }
    target.style.fontWeight = 'normal';
 });
 
