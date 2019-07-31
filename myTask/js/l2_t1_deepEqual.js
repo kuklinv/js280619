@@ -1,5 +1,6 @@
-'use strict';
 
+// ;(function () {
+    'use strict';
 let a = {
     name: 'Misha',
     order: {
@@ -31,5 +32,6 @@ const deepEqual = (a, b) => {
 // console.log(a === b);
 // let  result = deepEqual(a, b,);
 // console.log(result);
-
+// }());
 export {a, b, deepEqual};
+

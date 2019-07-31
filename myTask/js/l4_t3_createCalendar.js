@@ -40,7 +40,7 @@ const createBody = (data) => {
         let j = 0;
         while (j < 7) {
             let td = document.createElement('td');
-            if (data.getMonth() !== month) {
+            if (data.getMonth() != month) {
                 td.innerHTML = null;
                 td.classList.add('empty');
             } else {
