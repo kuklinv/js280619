@@ -29,12 +29,14 @@ const createHeader = (dataNameArr) => {
 
 const createBody = (data) => {
     const tbody = document.createElement('tbody');
-    let today = function getDay(date) {
-        var day = date.getDay();
-        if (day == 0) day = 7;
-        return day - 1;
-    };
-    let month = data.getMonth();
+    // let today = function getDay(date) {
+    //     var day = date.getDay();
+    //     if (day == 0) day = 7;
+    //     return day - 1;
+    // };
+    let today = data.getDay();
+    console.log(today);                                                                /////// !!!!
+    let month = data.getMonth();                                                       //////// solution here!!
     for (let i = 0; i < 5; i += 1) {
         let tr = document.createElement('tr');
         let j = 0;
@@ -54,4 +56,4 @@ const createBody = (data) => {
     }
     return tbody;
 };
-createCalendar("cal", 2012, 9);
+createCalendar("cal", 2019, 8);
