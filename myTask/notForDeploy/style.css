@@ -1,1 +1,26 @@
+table{
+    margin: auto;
+    margin-top: 60px;
+}
+caption {
+    font-size: small;
+}
+td, th{
+    border: 1px solid black;
+    padding: 3px;
+    text-align: center;
+}
+th {
+    cursor: pointer;
+}
+th:hover {
+    background: limegreen;
+}
+.empty {
+    background-color: #787e7e;
+}
 
+td:hover {
+    background-color: red;
+    color: lime;
+}
