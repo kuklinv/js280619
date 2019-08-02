@@ -1,4 +1,4 @@
-let main = document.querySelector('main');
+let main = document.querySelector('main');  // может быть контейнер и это решит вопрос ?
 let header = document.createElement('h1');
 let  headerStr = `
       JavaScript.RU: DOM/UI/course\n

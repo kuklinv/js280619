@@ -29,28 +29,23 @@ const createHeader = (dataNameArr) => {
 
 const createBody = (data) => {
     const tbody = document.createElement('tbody');
-    // let today = function getDay(date) {
-    //     var day = date.getDay();
-    //     if (day == 0) day = 7;
-    //     return day - 1;
-    // };
-    let today = data.getDay();
-    console.log(today);                                                                /////// !!!!
-    let month = data.getMonth();                                                       //////// solution here!!
+    let today = data.getDay() - 1;
+
+    let month = data.getMonth();
     for (let i = 0; i < 5; i += 1) {
         let tr = document.createElement('tr');
         let j = 0;
         while (j < 7) {
             let td = document.createElement('td');
-            if (data.getMonth() != month) {
+            if (data.getMonth() != month || i < 1 && j < today) {
                 td.innerHTML = null;
                 td.classList.add('empty');
             } else {
                 td.innerHTML = data.getDate();
+                data.setDate(data.getDate() + 1);
             }
             tr.appendChild(td);
             j += 1;
-            data.setDate(data.getDate() + 1);
         }
         tbody.appendChild(tr);
     }

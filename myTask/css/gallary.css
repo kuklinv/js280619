@@ -1,0 +1,29 @@
+#largeImg {
+    border: solid 1px blue;
+}
+
+#tumbs {
+      display: block;
+  }
+
+#tumbs img {
+    display: block;
+    margin: 5px;
+    border: solid 1px blue;
+}
+.gallery {
+    width: 600px;
+    overflow: hidden;
+}
+
+.gallery ul {
+    height: 130px;
+    width: 600px;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+}
+
+.gallery li {
+    display: inline-block;
+}
