@@ -5,14 +5,12 @@ import {style, styleToObject} from "./l2_t2_stringToObject.js";
 import buffer from "./l6_t1_stringBuffer.js";
 import sum from "./l6_t2_clojureSumm.js";
 import bufferClear from "./l6_t3_stringBufferClear.js";
-
+import army from "./l6_t4_makeArmy.js";
 
 let btns = document.querySelectorAll('button');
 btns.forEach((btn) => {
    btn.addEventListener("click", function (e) {
        switch (e.target.name) {
-           // case 'deepEqual': location.href = '#'; // use else go to another page
-           // case 'parsStr': location.href = '#';
            case 'dE': alert('прямое сравнение a === b: ' + (a === b) + '\n' + 'сравнение через deepEqual: ' + deepEqual(a, b));
            break;
            case 'parsStr': alert(JSON.stringify(styleToObject(style), null, '\t'));
@@ -37,8 +35,11 @@ btns.forEach((btn) => {
                }
            };
                break;
-           // case 'makeArmy': alert();
-           //     break;
+           case 'makeArmy': {
+               army[0]();
+               army[5]();
+           };
+               break;
        }
    });
 });
