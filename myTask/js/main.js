@@ -4,6 +4,7 @@ import {a, b, deepEqual} from "./l2_t1_deepEqual.js";
 import {style, styleToObject} from "./l2_t2_stringToObject.js";
 import buffer from "./l6_t1_stringBuffer.js";
 import sum from "./l6_t2_clojureSumm.js";
+import bufferClear from "./l6_t3_stringBufferClear.js";
 
 
 let btns = document.querySelectorAll('button');
@@ -25,8 +26,17 @@ btns.forEach((btn) => {
                break;
            case 'csumm': alert(sum(3)(7));
                break;
-           // case 'clearBuf': alert();
-           //     break;
+           case 'clearBuf': {
+               bufferClear("Тест");
+               bufferClear(" тебя не съест ");
+               if (confirm(bufferClear())) {
+                 break;
+               } else {
+                   bufferClear.clear();
+                   alert(bufferClear());
+               }
+           };
+               break;
            // case 'makeArmy': alert();
            //     break;
        }

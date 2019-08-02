@@ -1,13 +1,25 @@
+let bufferClear = makeBuffer();
+
 function makeBuffer() {
-...ваш код...
+    let currentBuffer = '';
+    function buffer(arg) {
+        if (arg) {
+            return currentBuffer += arg;
+        }
+        return currentBuffer;
+    };
+    buffer.clear = function () {
+        currentBuffer = '';
+    };
+    return buffer;
 }
 
-var buffer = makeBuffer();
+export default bufferClear;
 
-buffer("Тест");
-buffer(" тебя не съест ");
-alert( buffer() ); // Тест тебя не съест
-
-buffer.clear();
-
-alert( buffer() ); // ""
+// bufferClear("Тест");
+// bufferClear(" тебя не съест ");
+// alert(bufferClear()); // Тест тебя не съест
+//
+// bufferClear.clear();
+//
+// alert(bufferClear()); // ""
