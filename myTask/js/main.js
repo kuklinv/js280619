@@ -2,6 +2,8 @@
 
 import {a, b, deepEqual} from "./l2_t1_deepEqual.js";
 import {style, styleToObject} from "./l2_t2_stringToObject.js";
+import buffer from "./l6_t1_stringBuffer.js";
+import sum from "./l6_t2_clojureSumm.js";
 
 
 let btns = document.querySelectorAll('button');
@@ -13,8 +15,20 @@ btns.forEach((btn) => {
            case 'dE': alert('прямое сравнение a === b: ' + (a === b) + '\n' + 'сравнение через deepEqual: ' + deepEqual(a, b));
            break;
            case 'parsStr': alert(JSON.stringify(styleToObject(style), null, '\t'));
-           // case 'parsStr': alert(styleToObject(style));
            break;
+           case 'buffer': {
+               buffer('Замыкания');
+               buffer(' Использовать');
+               buffer(' Нужно!');
+               alert( buffer() ); // Замыкания Использовать Нужно!
+           };
+               break;
+           case 'csumm': alert(sum(3)(7));
+               break;
+           // case 'clearBuf': alert();
+           //     break;
+           // case 'makeArmy': alert();
+           //     break;
        }
    });
 });
