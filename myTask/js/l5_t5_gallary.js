@@ -4,10 +4,9 @@ let ulTumbs = document.querySelector('#tumbs');
 // console.log(largeImg);
 
 ulTumbs.addEventListener('click', function (e) {
-   let target = e.target;
-   if (target.tagName != 'li') {
+    e.preventDefault(); //TODO сейчас остановлен вопрос по поводу дефолтного поведенич при нажатии - кгда убираем галлерею. но во первых пропадает галлерея. во вторых выводиться один большой имадж
+   if (target.tagName != 'a') {
        return;
    }
-
-
+   largeImg.setAttribute('src', 'target.src')
 });
