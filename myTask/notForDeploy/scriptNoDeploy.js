@@ -1,25 +1,28 @@
 
 let f = debounce(alert, 1000);
-
 f(1); // выполняется немедленно
 f(2); // проигнорирован
-
 setTimeout( () => f(3), 100); // проигнорирован (прошло только 100 мс)
 setTimeout( () => f(4), 1100); // выполняется
 setTimeout( () => f(5), 1500); // проигнорирован (прошло только 400 мс от последнего вызова)
 
-function debounce(f, ms) {
+
+let limitInterval = 100;
+let timers = {};
+function debounce(f, timer) {
   return function () {
-      if ()
-      let result = f.apply(this, arguments);
-      return result;
+      let start = performance.now();
+      if (!timers[timer]) {
+          timers[timer] = 0;
+          timers[timer] += performance.now() - start;
+          let result = f.apply(this, arguments);              //TODO допилить декоратор
+          return result;
+      } else if ()
+
   }
 }
 
 
-// function trottle() {
-//
-// }
 
 
 
