@@ -3,31 +3,49 @@
 //     https://learn.javascript.ru/prototype
 //         https://learn.javascript.ru/settimeout-setinterval
 
-function f(x) {
-    return Math.random() * x; // random для удобства тестирования TODO not work
-}
-function makeCaching(f) {
-    let savedArgs;
-    function wrapper(x) {
-        if (x == savedArgs) {
-            return savedArgs;
-        }
-        savedArgs = x;
-        return f.call(this, x);
-    }
-    return wrapper;
-}
-
-f = makeCaching(f);
-
-var a, b;
-
-a = f(1);
-b = f(1);
-alert(a == b); // true (значение закешировано)
-
-b = f(2);
-alert(a == b); // false, другой аргумент => другое значение
+// function f(a, b) {
+//     console.log(a + b); // произвольная функция или метод
+// }
+// work = spy(f);
+// function spy(f) {
+//     f.calls = [];
+//     function wrapper(...arg) {
+//         f.calls.push(arg);
+//         return f.apply(this, arguments);
+//     }
+//     return wrapper;
+// }
+// work(1, 2); // 3
+// work(4, 5); // 9
+// for (let args of f.calls) {
+//     console.log('call:' + args.join()); // "call:1,2", "call:4,5"
+// }
+// console.log(work.calls);
+// function f(x) {
+//     return  Math.random() * x; // random для удобства тестирования TODO not work
+// }
+// function makeCaching(f) {
+//     // debugger
+//     let cach = {};
+//     function wrapper(x) {
+//         if (!(x in cach)) {
+//             cach[x] = f.call(this, x);
+//         }
+//         return cach[x];
+//     }
+//     return wrapper;
+// }
+//
+// f = makeCaching(f);
+//
+// var a, b;
+//
+// a = f(1);
+// b = f(1);
+// console.log(a == b); // true (значение закешировано)
+//
+// b = f(2);
+// console.log(a == b); // false, другой аргумент => другое значение
 
 // function work(a, b) {
 //     alert(a + b); // work - произвольная функция
