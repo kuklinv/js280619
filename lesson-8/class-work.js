@@ -21,7 +21,7 @@
 
 // console.log(account.getFullName());
 
-// TODO this on event !!!
+
 // const div = document.querySelector('.main');
 
 // div.onclick = account.getFullName;

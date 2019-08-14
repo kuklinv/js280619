@@ -22,7 +22,7 @@
 // }
 // console.log(work.calls);
 // function f(x) {
-//     return  Math.random() * x; // random для удобства тестирования TODO not work
+//     return  Math.random() * x; // random для удобства тести
 // }
 // function makeCaching(f) {
 //     // debugger
@@ -146,7 +146,7 @@
 // setTimeout(() => f(5), 1500); // проигнорирован (прошло только 400 мс от последнего вызова)
 //
 //
-// function debounce(f, timer) {                       //TODO dont work
+// function debounce(f, timer) {
 //     debugger
 //     let isCooldown = false;
 //     return function () {
