@@ -1,3 +1,46 @@
+// hexlet
+
+let doc = document.body;
+function prettify (doc) {
+    var treeWalker = document.createTreeWalker(doc, 4),
+        elementsArray = [],
+        valuesArray = [];
+    while (treeWalker.nextNode()) {
+        var parentEl = treeWalker.currentNode.parentNode,
+            valueElement = treeWalker.currentNode.nodeValue.trim();
+        if (parentEl.tagName === 'DIV' && valueElement !== "") {
+            elementsArray.push(parentEl);
+            valuesArray.push(valueElement);
+        }
+    }
+    for (var i = 0; i < elementsArray.length; i++) {
+        elementsArray[i].innerHTML = '<p>' + valuesArray[i] + '</p>';
+    }
+};
+
+const elements = prettify(doc);
+console.log(document.body.innerHTML);
+
+
+// my work
+// let doc = document.body;
+//
+// function prettify (doc) {
+//     let targetDiv = document.querySelector('div');
+//     // console.log(targetDiv);
+//     let nodes = targetDiv.childNodes;
+//     // console.log(nodes);
+//     let p = document.createElement('p');
+//     p.appendChild(nodes[0]);
+//     targetDiv.appendChild(p);
+//     console.log(targetDiv);
+//     return;
+// }
+// const elements = prettify(doc);
+// console.log(document.body.innerHTML);
+
+
+
 // Дорешиваем
 // https://learn.javascript.ru/decorators
 //     https://learn.javascript.ru/prototype
