@@ -1,4 +1,4 @@
-//  let li = document.querySelector('li#webpack');
+    //  let li = document.querySelector('li#webpack');
 // console.log(li.__proto__)
 // let ul = document.querySelector('ul');
 // console.log(ul.__proto__)
