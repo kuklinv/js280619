@@ -1,57 +1,3 @@
-<<<<<<< HEAD
-// hexlet
-//  не проходит тесты где в див вложен другой див...... по переписке коллег это проблема walker - не заходит и не проверяет что есть внутренний див
-// let doc = document.body;
-// function prettify (doc) {
-//     var treeWalker = document.createTreeWalker(doc, 4),
-//         elementsArray = [],
-//         valuesArray = [];
-//     while (treeWalker.nextNode()) {
-//         var parentEl = treeWalker.currentNode.parentNode,
-//             valueElement = treeWalker.currentNode.nodeValue.trim();
-//         if (parentEl.tagName === 'DIV' && valueElement !== "") {
-//             elementsArray.push(parentEl);
-//             valuesArray.push(valueElement);
-//         }
-//     }
-//     for (var i = 0; i < elementsArray.length; i++) {
-//         elementsArray[i].innerHTML = '<p>' + valuesArray[i] + '</p>';
-//     }
-// };
-//
-// const elements = prettify(doc);
-// console.log(document.body.innerHTML);
-
-
-// my work
-let doc = document.body;
-
-function prettify (doc) {
-    let targetDiv = document.querySelector('div');
-    console.log(targetDiv);
-    let nodes = targetDiv.childNodes;
-    console.log(nodes);
-    let p = document.createElement('p');
-    let text = nodes[0].nodeValue.trim();
-    console.log(text);
-    p.innerHTML = text;
-    targetDiv.appendChild(p);
-    let exPelem = targetDiv.querySelectorAll("p");
-    if (exPelem.outerHTML = '') {
-        delete  exPelem;
-    }
-    // console.log(targetDiv);
-    return;
-}
-const elements = prettify(doc);
-=======
-
-
-
-
-//
-
-
 
 
 // // my work
@@ -70,7 +16,6 @@ const elements = prettify(doc);
 //     }
 // }
 // const elements = prettify(doc);
->>>>>>> 206b08dc6b26bb01d1f204c07d218a77a01a1515
 // console.log(document.body.innerHTML);
 //
 
