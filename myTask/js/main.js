@@ -8,7 +8,14 @@ import bufferClear from "./l6_t3_stringBufferClear.js";
 import army from "./l6_t4_makeArmy.js";
 import throttle from "./l8_t1_trottle.js";
 import debounce from "./l8_t2_debounce.js";
+import ClButton from "./clButton.js";     // TODO и не подключилолсь и часть кнопок сломались (которые алерты)
 
+// TODO не создал экземпляров класса ClButton.......
+
+// TODO лучший вариант написать класс  - копка создать экзкмпляры этого класса и приделать к нему эддэвентлистенер
+// у каждого будет независимый
+// саму кнопку нарисовать так же как в примере про dropdown
+// TODO класс. эт будет интересно
 
 let btns = document.querySelectorAll('button');
 btns.forEach((btn) => {
