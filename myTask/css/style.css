@@ -80,48 +80,6 @@ button {
 /*    padding: 20px 20px 10px;*/
 /*    color: #fff;*/
 /*}*/
-
-.gridcontainer {
-    display: grid;
-    font-size: 30px;
-    height: 300px;
-    background-color: rgb(123, 135, 158);
-    grid-gap: 5px 5px;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: repeat(3, 1fr);
-    grid-area:
-            " . . header"
-            "content content content"
-            "footer content content"
-}
-
-.d1 {
-    background: red;
-}
-.d2 {
-    background: rgb(21, 255, 0);
-}
-.d3 {
-    background: rgb(93, 25, 172)(202, 141, 141);
-}
-.d4 {
-    background: rgb(128, 119, 7);
-    /* grid-row: 2/4; */
-}
-.d5 {
-    background: rgb(145, 94, 94);
-}
-.d6 {
-    background: rgb(167, 19, 147);
-
-}
-.d7 {
-    background: yellowgreen;
-    grid-column: 1/4;
-}
-.dall{
-    text-align: center;
-}
 /*.row-flex {*/
 /*    display: -webkit-box;*/
 /*    display: -ms-flexbox;*/
