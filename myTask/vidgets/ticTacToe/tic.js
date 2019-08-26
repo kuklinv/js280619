@@ -1,63 +1,65 @@
-function game() {
 
-}
-
-class Cell {
-    constructor (element, sign) {
+class Component {
+    constructor(element) {
         this._element = element;
+    }
+}
+class Cell extends Component {
+    constructor(element, sign) {
+        super(element);
         this.sign = sign;
-        // this.render();
-        this._element.querySelector('span').addEventListener('click', game);
+        Cell.cellCounter ++;
     }
-    show () {
-        this._element.setAttribute('hidden', true);
+    clear() {
+        this._element.innerHTML = '';
     }
-    hide () {
-        this._element.removeAttribute('hidden');
-    }
-    toggle() {
-        this._element.toggle('hidden');
-    }
-    renderCross () {
+    renderCross() {
         this._element.innerHTML = `
         <span><img src="../../pic/cross.png"/></span>
         `;
     }
-    renderZero () {
+
+    renderZero() {
         this._element.innerHTML = `
         <span><img src="../../pic/zero.png"/></span>
         `;
     }
 }
 
+Cell.cellCounter = 0;
+let cellArray = [];
+let numberOfCell = 9;
+makeCellArray(cellArray);
+start(cellArray);
+setTimeout(function () {
+    return clearAll(cellArray);
+}, 2000);
 
-let cell1 = new Cell {
-    document.querySelector('.d1')
+
+////// functions declaration
+function makeCellArray (arr) {
+    for (let i = 1; i <= numberOfCell ; i += 1 ) {
+        arr.push(new Cell(document.querySelector(`.d${i}`)));
+    }
+    return arr;
 }
-let cell2 = new Cell {
-    document.querySelector('.d2')
-}
-let cell3 = new Cell {
-    document.querySelector('.d3')
-}
-let cell4 = new Cell {
-    document.querySelector('.d4')
-}
-let cell5 = new Cell {
-    document.querySelector('.d5')
-}
-let cell6 = new Cell {
-    document.querySelector('.d6')
-}
-let cell7 = new Cell {
-    document.querySelector('.d7')
-}
-let cell8 = new Cell {
-    document.querySelector('.d8')
-}
-let cell9 = new Cell {
-    document.querySelector('.d9')
+function start (arr) {
+        for (let i = 0; i < arr.length; i += 1) {
+            if (i === 0 || i % 2 === 0) {
+                arr[i].renderZero();
+            } else {
+                arr[i].renderCross();
+            }
+        }
 }
 
-cell1.hide();
+function clearAll (arr) {
+ for (let i = 0; i < arr.length; i += 1) {
+   arr[i].clear();
+ }
+}
+
+// function game() {
+//
+// }
 

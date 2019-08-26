@@ -2,17 +2,9 @@
 #wrapper {
     display: grid;
     font-size: 30px;
-    /*height: 300px;*/
-    /*background-color: rgb(123, 135, 158);*/
     grid-gap: 5px 5px;
     grid-template-rows: 100px 100px 100px;
     grid-template-columns: 100px 100px 100px;
-    /*grid-template-rows: repeat(3, 1fr);*/
-    /*grid-template-columns: repeat(3, 1fr);*/
-    /*grid-area:*/
-    /*        " . . header"*/
-    /*        "content content content"*/
-    /*        "footer content content"*/
 }
 
 .dall{
