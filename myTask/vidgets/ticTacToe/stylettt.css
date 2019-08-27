@@ -7,12 +7,23 @@
     grid-template-columns: 100px 100px 100px;
 }
 
+#control {
+    display: grid;
+    grid-template-rows: 30px;
+    grid-template-columns: 155px 155px;
+}
+
 .dall{
     text-align: center;
     border: solid #4d4d4d;
 }
 .dall:hover {
     background-color: darkolivegreen;
+}
+
+.elcontrol {
+    text-align: center;
+    align-content: inherit;
 }
 
 img {
