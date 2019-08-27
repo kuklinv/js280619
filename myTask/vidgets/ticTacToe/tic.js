@@ -1,7 +1,10 @@
 let gameStep = 0;
 let newGameButton = document.querySelector('BUTTON');
 newGameButton.addEventListener('click', () => clearAll(cellArray));
-
+let gameResult = document.querySelector('OUTPUT');
+// let humanPlayer = 'cross';                                // default sign
+// let aiPlayer = 'zero';
+// let startBoard = ['', '', '', '', '', '', '', '', '',];           // start state of game board
 
 class Component {
     constructor(element) {
@@ -76,23 +79,44 @@ function clearAll(arr) {
 }
 
 function game() {                                //  TODO game algorithm
-    this.renderCross();
-    while (!checkVictory()) {
-    aiStep();
-    this.renderCross();
-    }
-    return
-    // if (gameStep == 0 || gameStep % 2 == 0)  this.renderCross();
-    // else  this.renderZero();
-}
-
-function aiStep() {
+    if (gameStep == 0 || gameStep % 2 == 0)  this.renderCross();
+    else this.renderZero();
+    // while (!checkVictory()) {
+    //     aiStep();
+    //     this.renderCross();
+    // }
+    // gameResult.value = ``                    // winner output
 
 }
-
-function checkVictory() {
-
+function randomInteger(min, max) {
+    let rand = min + Math.random() * (max + 1 - min);
+    return Math.floor(rand);
 }
 
+function aiMove() {
+    let number = randomInteger(1, 8);
+}
+
+// function emptyCell(board) {
+//     return board.filter(item => item !== 'cross' && item !== 'zero');
+// }
+//
+// function checkVictory(board, player) {
+//     if (
+//         (board[0] == player && board[1] == player && board[2] == player) ||
+//         (board[3] == player && board[4] == player && board[5] == player) ||
+//         (board[6] == player && board[7] == player && board[8] == player) ||
+//         (board[0] == player && board[3] == player && board[6] == player) ||
+//         (board[1] == player && board[4] == player && board[7] == player) ||
+//         (board[2] == player && board[5] == player && board[8] == player) ||
+//         (board[0] == player && board[4] == player && board[8] == player) ||
+//         (board[2] == player && board[4] == player && board[6] == player)
+//     ) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+//
 
 
