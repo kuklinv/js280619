@@ -2,8 +2,6 @@ let gameStep = 0;
 let newGameButton = document.querySelector('BUTTON');
 newGameButton.addEventListener('click', () => clearAll(cellArray));
 let gameResult = document.querySelector('OUTPUT');
-let humanPlayer = 'cross';                                // default sign
-let aiPlayer = 'zero';
 let startBoard = [];                                      // start state of game board
 
 class Component {
@@ -74,16 +72,19 @@ function clearAll(arr) {                             // clear all and set state 
     for (let i = 0; i < arr.length; i += 1) {
         arr[i].clear();
         gameStep = 0;
+        gameResult.value = 'unknown';
     }
 }
 
-function game() {                                //  TODO game algorithm
-    while (checkVictory(cellArray)) {
+function game() {                                //  TODO game algorithm. крест может затирать другие символы, нет ничьей, АИ выигрывает после следующего клика игрока
+    if (!checkVictory(cellArray)) {
         this.renderCross();                              // human move
+    }
         let emptyBoard = emptyCell(cellArray);
-        console.log(emptyBoard);
+    if (!checkVictory(cellArray)) {
         aiMove(emptyBoard);
     }
+
 }
 
 function randomInteger(min, max) {
@@ -125,23 +126,13 @@ function checkVictory(cellArray) {
         (cellArray[0].sign == 'zero' && cellArray[4].sign == 'zero' && cellArray[8].sign == 'zero') ||
         (cellArray[2].sign == 'zero' && cellArray[4].sign == 'zero' && cellArray[6].sign == 'zero')
     ) {
-        gameResult.value = 'AI WIN!';                 // winner output
+        gameResult.value = 'UPS.. AI already WIN!';                 // winner output
         return true;
     } else {
         return false;
     }
 }
 
-
-// (board[0] == player && board[1] == player && board[2] == player) ||
-// (board[3] == player && board[4] == player && board[5] == player) ||
-// (board[6] == player && board[7] == player && board[8] == player) ||
-// (board[0] == player && board[3] == player && board[6] == player) ||
-// (board[1] == player && board[4] == player && board[7] == player) ||
-// (board[2] == player && board[5] == player && board[8] == player) ||
-// (board[0] == player && board[4] == player && board[8] == player) ||
-// (board[2] == player && board[4] == player && board[6] == player)
-//
 
 
 
