@@ -1,9 +1,14 @@
 .hours {
-color: red;
+    color: red;
+    font-size: x-large;
 }
+
 .minutes {
-color: #932bb3;
+    color: #932bb3;
+    font-size: x-large;
 }
+
 .sec {
-color: blue;
+    color: blue;
+    font-size: x-large;
 }

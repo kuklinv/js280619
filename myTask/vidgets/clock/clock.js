@@ -2,7 +2,8 @@ class Clock {
     constructor(element) {
         this.element = element;
         this.render();
-        let timer;
+        document.querySelector('.start').addEventListener('click', start.bind(this));
+        document.querySelector('.stop').addEventListener('click', stop.bind(this));
     }
 
     formatTime(item) {
@@ -21,16 +22,21 @@ class Clock {
         this.element.innerHTML = `<output class="hours">${h}</output><output class="minutes">: ${min}</output><output class="sec">: ${sec}</output>`;
     }
 
-    stop() {
-        clearInterval(timer);
-    }
-
-    start() {
-        // debugger
-        timer = setInterval('this.render', 1000);
-    }
 }
 
-let clock = new Clock(document.querySelector('.time'));
-document.querySelector('.start').addEventListener('click', clock.start());  // TODO not work
+let clock1 = new Clock(document.querySelector('.time'));
+console.log(clock1);
+let timer;
 
+function start() {
+    timer = setInterval(function () {
+        clock1.render();
+    }, 1000);
+}
+
+function stop() {
+    clearInterval(timer);
+    timer = null;
+}
+
+// document.querySelector('.alert').addEventListener('click', alert.bind('Iam test'));
