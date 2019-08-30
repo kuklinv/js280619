@@ -8,14 +8,22 @@ input {
 }
 
 .slider-wraper {
-    display: inline-block;
+    /*display: inline-block;*/
     width: 300px;
-    height: 20px;
+    height: 50px;
     padding: 0;
 }
 
 .slider-wrapper input {
     width: 300px;
-    height: 20px;
+    height: 50px;
     margin: 0;
+}
+
+.tickmarks {
+    display: flex;
+}
+
+.tickmarks option label {
+    display: flex;
 }
