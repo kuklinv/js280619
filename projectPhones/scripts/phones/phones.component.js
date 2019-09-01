@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-  <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-  <link rel="stylesheet" href="app.css">
-  <script src="./scripts/app.js" defer></script>
-</head>
-<body>
 
-  <div class="container-fluid">
-    <div class="row">
+export class PhonesComponent {
+    constructor({element}) {
+        this._element = element;
+        this._render();
+    }
+
+    _render() {
+        this._element.innerHTML = `
+            <div class="row">
 
       <!--Sidebar-->
       <div class="col-md-2">
@@ -200,6 +194,6 @@
 
       </div>
     </div>
-  </div>
-</body>
-</html>
+       `;
+    }
+}
