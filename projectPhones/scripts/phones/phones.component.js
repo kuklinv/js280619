@@ -1,11 +1,12 @@
 import {PhonesCatalogComponent} from "./phones-catalog/phones-catalog.component.js";
-
+import {PhonesService} from "./phones.service.js";
 export class PhonesComponent {
     constructor({element}) {
         this._element = element;
         this._render();
         this._catalog = new PhonesCatalogComponent({
-            element: this._element.querySelector('.phones-catalog')
+            element: this._element.querySelector('.phones-catalog'),
+            phones: PhonesService.getAll()
         })
     }
 
