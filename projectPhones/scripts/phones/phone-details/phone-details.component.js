@@ -1,15 +1,15 @@
-// import {BaseComponent} from "../common/base/base.component.js";
+import {BaseComponent} from "../common/base/base.component.js";
 
-export class PhoneDetailsComponent {
-    constructor({element}) {
-        this._element = element;             // теперь когда создали common класс - не нужно
-        this._render();
-    }
-   // show(phone) {
-   //     this.phone = phone;
-   //     this._render();
-   //     super.show();
-   // }
+export class PhoneDetailsComponent extends BaseComponent{
+    // constructor({element}) {
+    //     this._element = element;             // теперь когда создали common класс - не нужно
+    //     this._render();
+    // }
+   show(phone) {
+       this.phone = phone;
+       this._render();
+       super.show();
+   }
 
     _render() {
         this._element.innerHTML = `

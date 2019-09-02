@@ -1,20 +1,20 @@
-// import {BaseComponent} from "../common/base/base.component.js";
+import {BaseComponent} from "../common/base/base.component.js";
 
-export class PhonesCatalogComponent {
+export class PhonesCatalogComponent extends BaseComponent{
     constructor({element, phones, onPhoneSelect}) {
-        this._element = element;
-        // super({element});
+        // this._element = element;
+        super(element);
         this._phones = phones;
         this._onPhoneSelect = onPhoneSelect;
         this._render();
-        //     this._element.addEventListener('click', (e) => {
-        //         let phoneEl = e.target.closest('.phone');
-        //         if (!phoneEl) {
-        //             return;
-        //         }
-        //         // console.log(phoneEl.dataset.phoneId);
-        //         this._onPhoneSelect(phoneEl.dataset.phoneId);
-        //     })
+        this._element.addEventListener('click', (e) => {
+            let phoneEl = e.target.closest('.phone');
+            if (!phoneEl) {
+                return;
+            }
+            // console.log(phoneEl.dataset.phoneId);
+            this._onPhoneSelect(phoneEl.dataset.phoneId);
+        })
         }
 
         _render() {
