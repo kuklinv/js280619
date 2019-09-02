@@ -153,12 +153,15 @@ const mockPhones = [
         "snippet": "Motorola CHARM fits easily in your pocket or palm.  Includes MOTOBLUR service."
     }
 ];
+
+
 export const PhonesService = new class {
-    getAll () {
+    getAll() {
         // http
         return mockPhones;
     }
-    getOneById () {
+
+    getOneById(id) {
         return {};
     }
-}
+};
