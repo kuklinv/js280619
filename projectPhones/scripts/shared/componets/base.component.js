@@ -1,13 +1,13 @@
 export class BaseComponent {
-    constructor(element) {
+    constructor({element}) {
         this._element = element;
     }
 
-    show() {
+    show(){
         this._element.hidden = false;
     }
 
-    hide() {
+    hide(){
         this._element.hidden = true;
     }
 }
