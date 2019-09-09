@@ -1,10 +1,7 @@
 import {BaseComponent} from "../common/base/base.component.js";
 
 export class PhoneDetailsComponent extends BaseComponent{
-    // constructor({element}) {
-    //     this._element = element;             // теперь когда создали common класс - не нужно
-    //     this._render();
-    // }
+
    show(phone) {
        this.phone = phone;
        this._render();
